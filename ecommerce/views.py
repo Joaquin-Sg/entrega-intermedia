@@ -8,7 +8,7 @@ def inicio(request):
 	return HttpResponse("Perfumerias Tito")
 
 def mostrar_index(request):
-    return render(request, "plantillas/index.html", {"mi_titulo":"Invita al COD Ariel putazo :P"})
+    return render(request, "plantillas/index.html", {"mi_titulo":"Bienvenidos a mi Ecommerce :)"})
 
 def mostrar_productos(request):
     context = {
