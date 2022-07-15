@@ -1,16 +1,20 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+<<<<<<< HEAD
 from ecommerce.models import Producto, Usuario
 from ecommerce.forms import ProductoFormulario, ProductoBusquedaFormulario
 
+=======
+from ecommerce.models import Producto, Usuario, Vencimiento
+>>>>>>> 3afd4b28752d3528fe35623892d7d485abeace0c
 
 # Create your views here.
 
 def inicio(request):
 	return HttpResponse("Perfumerias Tito")
 
-def mostrar_template(request):
-    return render(request, "plantillas/index.html")
+def mostrar_index(request):
+    return render(request, "plantillas/index.html", {"mi_titulo":"Invita al COD Ariel putazo :P"})
 
 def mostrar_productos(request):
     context = {
@@ -18,6 +22,7 @@ def mostrar_productos(request):
     }
     return render(request, "plantillas/productos.html", context)
 
+<<<<<<< HEAD
 def formulario_producto(request):
 
     if request.method == "POST":
@@ -50,3 +55,15 @@ def formulario_busqueda(request):
 
 
     return render(request, "plantilla/busqueda_productos.html", {"busqueda_formulario": busqueda_formulario})
+=======
+# def agregar_productos(request):
+#    context = {}
+#    context["producto"] = Producto.objects.all()
+#    return render(request, "plantillas/vista_vendedor.html", context)
+
+def mostrar_vencimientos(request):
+    context = {}
+    context["vence"] = Vencimiento.objects.all()
+    return render(request, "plantillas/muestra_vencimientos.html", context)
+
+>>>>>>> 3afd4b28752d3528fe35623892d7d485abeace0c

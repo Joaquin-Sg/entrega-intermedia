@@ -13,4 +13,7 @@ class Usuario(models.Model):
     apellido = models.CharField(max_length=20)
     edad = models.IntegerField()
 
+class Vencimiento(models.Model):
+    nombre= models.CharField(max_length=30)
+    fecha_vencimiento= models.DateField()
 
