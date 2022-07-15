@@ -15,11 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from ecommerce.views import inicio, mostrar_template, mostrar_productos
+from ecommerce.views import inicio, mostrar_template, mostrar_productos, formulario_producto, formulario_busqueda
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('inicio/', inicio),
     path('template/', mostrar_template),
-    path('productos/', mostrar_productos)
+    path('productos/', mostrar_productos),
+    path('formulario/', formulario_producto),
+    path('buscar/', formulario_busqueda)
 ]
