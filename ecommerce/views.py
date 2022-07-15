@@ -1,12 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-<<<<<<< HEAD
 from ecommerce.models import Producto, Usuario
 from ecommerce.forms import ProductoFormulario, ProductoBusquedaFormulario
-
-=======
 from ecommerce.models import Producto, Usuario, Vencimiento
->>>>>>> 3afd4b28752d3528fe35623892d7d485abeace0c
 
 # Create your views here.
 
@@ -14,7 +10,7 @@ def inicio(request):
 	return HttpResponse("Perfumerias Tito")
 
 def mostrar_index(request):
-    return render(request, "plantillas/index.html", {"mi_titulo":"Invita al COD Ariel putazo :P"})
+    return render(request, "plantillas/index.html", {"mi_titulo":"Bienvenido a mi Ecommerce :)"})
 
 def mostrar_productos(request):
     context = {
@@ -22,7 +18,6 @@ def mostrar_productos(request):
     }
     return render(request, "plantillas/productos.html", context)
 
-<<<<<<< HEAD
 def formulario_producto(request):
 
     if request.method == "POST":
@@ -31,7 +26,7 @@ def formulario_producto(request):
 
         if  mi_formulario.is_valid:
             datos = mi_formulario.cleaned_data 
-            producto = Producto(name_of_product=datos["nombre"], price=datos[], details="detalle del producto")
+            producto = Producto(name_of_product=datos["nombre"], price=[], details="detalle del producto")
             curso.save()
 
             return render(request, "plantillas/busqueda_productos.html", {"mensaje":"agregado con exito!"})
@@ -53,9 +48,8 @@ def formulario_busqueda(request):
         producto = Producto.objects.filter(name_of_product=busqueda_formulario["criterio"]).all()
         return render(request, "plantillas/busqueda_productos.html", {"busqueda_formulario": busqueda_formulario, "producto": producto})
 
-
     return render(request, "plantilla/busqueda_productos.html", {"busqueda_formulario": busqueda_formulario})
-=======
+
 # def agregar_productos(request):
 #    context = {}
 #    context["producto"] = Producto.objects.all()
@@ -66,4 +60,3 @@ def mostrar_vencimientos(request):
     context["vence"] = Vencimiento.objects.all()
     return render(request, "plantillas/muestra_vencimientos.html", context)
 
->>>>>>> 3afd4b28752d3528fe35623892d7d485abeace0c
