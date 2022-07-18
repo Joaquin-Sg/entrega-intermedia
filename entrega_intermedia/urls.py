@@ -14,9 +14,20 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.urls import path
+from ecommerce.views import inicio, mostrar_index, mostrar_productos, formulario_producto, formulario_busqueda
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('inicio/', inicio),
+    path('template/', mostrar_index),
+    path('productos/', mostrar_productos),
+    path('formulario/', formulario_producto),
+    path('buscar/', formulario_busqueda)
+]
 from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('ecommerce.urls')),
-]
+    ]
